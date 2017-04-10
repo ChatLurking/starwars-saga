@@ -4,8 +4,28 @@ import { connect } from 'react-redux';
 import { selectId, selectCharData } from './selectors';
 import { createStructuredSelector } from 'reselect';
 import CharData from '../components/CharData';
+import styled from 'styled-components';
 
-import '../App.css';
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+`;
+
+const Button = styled.button`
+  padding: 5px;
+  width: 200px;
+  background: transparent;
+  border-radius: 10px;
+  border: 2px solid #6666ff;
+  font-weight: 900;
+  color: #EEE;
+  margin-top: 20px;
+  
+  &:hover {
+    background: #6666ff;
+  }
+`;
 
 class App extends Component {
   handleClick = () => {
@@ -14,17 +34,17 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <Wrapper className="App">
         <CharData charData={this.props.charData} />
-        <button onClick={this.handleClick}>Click me</button>
-      </div>
+        <Button onClick={this.handleClick}>Click me</Button>
+      </Wrapper>
     );
   }
 }
 
 App.propTypes = {
   id: React.PropTypes.number,
-  setNewId: React.PropTypes.func.isRequired,
+  setNewId: React.PropTypes.func,
   charData: React.PropTypes.object,
 };
 
