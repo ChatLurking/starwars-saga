@@ -1,7 +1,7 @@
 import { takeEvery } from 'redux-saga/effects';
-import getCharacter from './getCharacter';
-import { INIT_DATA } from '../containers/constants';
+import {  NEW_ID } from '../containers/constants';
+import getCharacterSaga from './getCharacterSaga';
 
 export default function* watcher() {
-  yield* takeEvery(INIT_DATA, getCharacter);
+  yield takeEvery(NEW_ID, getCharacterSaga);
 }

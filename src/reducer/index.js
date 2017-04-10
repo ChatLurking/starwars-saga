@@ -2,7 +2,7 @@ import { INIT_DATA, ERROR, NEW_ID } from '../containers/constants';
 import { fromJS } from 'immutable';
 
 const initState = fromJS({
-  id: 1,
+  id: 0,
   charData: {
     name: null,
     height: null,
@@ -25,7 +25,6 @@ function reducer (state = initState, action) {
   switch (action.type) {
     case INIT_DATA:
       if(action.charData && action.charData.name) {
-        console.log(action)
         return state
           .setIn(['charData', 'name'], action.charData.name)
           .setIn(['charData', 'height'], action.charData.height)
@@ -44,7 +43,6 @@ function reducer (state = initState, action) {
       }
       return state
     case NEW_ID:
-      console.log(action);
       return state
         .set('id', action.data);
     case ERROR:

@@ -1,6 +1,6 @@
 import { fork } from 'redux-saga/effects';
-import getCharacter from './getCharacter';
+import Watcher from './watcher';
 
 export default function* startForman() {
-  yield fork(getCharacter);
+  yield fork(Watcher);
 }
