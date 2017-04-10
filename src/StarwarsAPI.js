@@ -20,6 +20,6 @@ const buildCharacter = (data) => {
 }
 
 export const getCharacterData = (searchQuery) => {
-  const endpoint = `http://swapi.co/api/people/${searchQuery}/`;
+  const endpoint = `https://swapi.co/api/people/${searchQuery}/`;
   return fetch(endpoint).then((response) => response.json()).then((json) => buildCharacter(json));
 }
