@@ -28,7 +28,7 @@ function reducer (state = initState, action) {
         return state
           .setIn(['charData', 'name'], action.charData.name)
           .setIn(['charData', 'height'], action.charData.height)
-          .setIn(['charData', 'mass'], action.charData.height)
+          .setIn(['charData', 'mass'], action.charData.mass)
           .setIn(['charData', 'hairColor'], action.charData.hairColor)
           .setIn(['charData', 'skinColor'], action.charData.skinColor)
           .setIn(['charData', 'eyeColor'], action.charData.eyeColor)
